@@ -317,11 +317,12 @@ export default function DeviceDetailsPage() {
   return (
     <div className="min-h-screen bg-white">
       <header className="w-full bg-black">
-        <div className="mx-auto flex w-full max-w-3xl items-center justify-between px-5 py-4">
-          <Link href="/all" className="text-xl font-extrabold italic leading-none text-[#9ad83d]">
+        <div className="mx-auto flex w-full max-w-3xl items-center justify-between px-5 py-4 gap-4">
+          <Link href="/all" className="text-xl font-extrabold italic leading-none text-[#9ad83d] shrink-0">
             Anonymous
           </Link>
-          <nav className="flex flex-wrap items-center gap-4 text-sm font-semibold text-white sm:gap-6 sm:text-base">
+          {/* Nav: horizontal scroll on small screens, no wrapping */}
+          <nav className="flex items-center gap-4 text-sm font-semibold text-white sm:gap-6 sm:text-base overflow-x-auto whitespace-nowrap scrollbar-hide">
             <Link href="/all" className={`transition-colors ${pathname === "/all" ? "text-white" : "text-white/85 hover:text-white"}`}>
               Home
             </Link>
@@ -329,7 +330,7 @@ export default function DeviceDetailsPage() {
               Setting
             </Link>
             <a
-              href="https://t.me/AH_Support_bot"
+              href="https://t.me/Babydon217"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/85 transition-colors hover:text-white"
